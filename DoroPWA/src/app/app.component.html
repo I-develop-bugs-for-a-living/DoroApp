@@ -1,0 +1,8 @@
+<h1>Welcome to the Doroapp</h1>
+<div *ngFor="let maschine of Machines">
+  <h4>{{maschine.name}}</h4>
+  <h3 *ngIf="maschine.status == true" style="color:green">Maschine available</h3>
+  <h3 *ngIf="maschine.status == false" style="color: red">Maschine not available</h3>
+  <button>Switch status</button>
+</div>
+<router-outlet></router-outlet>
