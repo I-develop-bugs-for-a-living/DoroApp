@@ -6,7 +6,7 @@ import { Observable, Subject, throwError } from 'rxjs';
   providedIn: 'root'
 })
 export class WmApiService {
-  private apiUrl: string = "http://localhost:5000"
+  private apiUrl: string = 'https://beready-env.eba-ct8pphes.eu-central-1.elasticbeanstalk.com/api/v1';
 
   constructor(private http: HttpClient) {  }
 
