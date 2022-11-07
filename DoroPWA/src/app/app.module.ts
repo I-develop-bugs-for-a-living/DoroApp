@@ -13,6 +13,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { PeoplecardComponent } from './components/peoplecard/peoplecard.component';
 import { MachineStatusComponent } from './components/machine-status/machine-status.component';
 import { StartComponent } from './components/start/start.component';
+import { MensaBuddyComponent } from './components/mensa-buddy/mensa-buddy.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { StartComponent } from './components/start/start.component';
     SearchComponent,
     PeoplecardComponent,
     MachineStatusComponent,
-    StartComponent
+    StartComponent,
+    MensaBuddyComponent
   ],
   imports: [
     BrowserModule,
