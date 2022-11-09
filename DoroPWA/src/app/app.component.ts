@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { WmApiService } from './services/wm-api.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +14,7 @@ export class AppComponent implements OnInit {
   Trockner = {"Trockner 1": "Free", "Trockner 2": "Done"};
   counter = 0;
 
-  constructor(private api:WmApiService) {}
+  constructor(private api:WmApiService, private router:Router) {}
 
   ngOnInit():void {
     this.api.getWMachines().subscribe((response:any) => {this.Machines = response})
@@ -30,5 +31,7 @@ export class AppComponent implements OnInit {
     this.api.getTrockner().subscribe((response:any) => {this.Trockner = response})
   }
 
-
+  redirecting(a:any) {
+    this.router.navigate([a]);
+  }
 }
