@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { WmApiService } from './services/wm-api.service';
 import { Router } from '@angular/router';
+import { SwUpdate, UnrecoverableStateEvent, VersionEvent, VersionReadyEvent, SwPush } from '@angular/service-worker';
+import { NotificationsService } from './services/notifications.service';
+import { PUBLIC_VAPID_KEY_OF_SERVER } from './app.constants';
 
 @Component({
   selector: 'app-root',
@@ -9,26 +11,65 @@ import { Router } from '@angular/router';
 })
 export class AppComponent implements OnInit {
   title = 'DoroPWA';
-  statuses = ['In Use', 'Done', 'Free']
-  Machines = {'Waschmaschine 1': 'In Use', 'Waschmaschine 2': 'Free', 'Waschmaschine 3': 'Done', 'Waschmaschine 4': 'Done'};
-  Trockner = {"Trockner 1": "Free", "Trockner 2": "Done"};
-  counter = 0;
+  notificationData:string = '';
 
-  constructor(private api:WmApiService, private router:Router) {}
+  constructor(
+    private router:Router,
+    private updateService: SwUpdate,
+    private pushService: SwPush,
+    private notificationService: NotificationsService
+    ) {}
 
   ngOnInit():void {
-    this.api.getWMachines().subscribe((response:any) => {this.Machines = response})
-    this.api.getTrockner().subscribe((response:any) => {this.Trockner = response})
-  }
-  
-  switchStatus(id:string, status:string) {
-    this.api.setWMachinesStatus(id, status).subscribe((response) => {alert(response)})
-    this.api.getWMachines().subscribe((response:any) => {this.Machines = response})
+    console.log('AppComponent.ngOnInit');
+    if (!this.updateService.isEnabled) {
+      console.log('Service Worker is not enabled');
+      return;
+    }
+    console.log('AppComponent.ngOnInit: Service Worker is enabled');
+    this.#handelUpdates();
+    this.#handelPushNotifications();
   }
 
-  switchStatusT(id:string, status:string) {
-    this.api.setTrocknerStatus(id, status).subscribe((response) => {alert(response)})
-    this.api.getTrockner().subscribe((response:any) => {this.Trockner = response})
+  unsubscribe():void {
+    this.pushService.unsubscribe().then(() => {
+      console.log('Unsubscribed from push notifications');
+    });
+  }
+
+  async #handelPushNotifications() {
+    try {
+      const sub = await this.pushService.requestSubscription({
+        serverPublicKey: PUBLIC_VAPID_KEY_OF_SERVER,
+      });
+      this.notificationService.addSubscription(sub);
+      console.log('Subscribed to push notifications');
+    } catch (err) {
+      console.error('Could not subscribe to push notifications', err);
+    }
+    this.pushService.messages.subscribe((message) => {
+      console.log('Received a push message', message);
+    });
+    this.pushService.notificationClicks.subscribe((message) => {
+      console.log('Received a push notification click', message);
+    });
+    this.pushService.subscription.subscribe((subscription) => {
+      console.log('Received a push subscription', subscription);
+    });
+  }
+
+  #handelUpdates() {
+    this.updateService.versionUpdates.subscribe((event: VersionEvent) => {
+      console.log('AppComponent.versionUpdates', event);
+      alert(event.type);
+      if (event.type == 'VERSION_READY' && confirm(`New version ${(event as VersionReadyEvent).latestVersion.hash} available. Load New Version?`)) {
+        window.location.reload();
+      }
+    });
+    
+    this.updateService.unrecoverable.subscribe((event: UnrecoverableStateEvent) => {
+      alert('Error reason : ' + event.reason);
+    });
   }
 
   redirecting(a:any) {

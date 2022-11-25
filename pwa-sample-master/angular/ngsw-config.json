@@ -29,20 +29,11 @@
   ],
   "dataGroups": [
     {
-      "name": "apiw_machines",
-      "urls": ["http://localhost:5000/w_machines_status"],
+      "name": "api",
+      "urls": ["http://localhost:3000/api/cities"],
       "cacheConfig": {
         "maxSize": 20,
-        "maxAge": "1d",
-        "timeout": "5s"
-      }
-    },
-    {
-      "name": "apitrockner",
-      "urls": ["http://localhost:5000/trockner_status"],
-      "cacheConfig": {
-        "maxSize": 20,
-        "maxAge": "1d",
+        "maxAge": "1h",
         "timeout": "5s"
       }
     }

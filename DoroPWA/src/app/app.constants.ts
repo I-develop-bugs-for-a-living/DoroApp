@@ -1,0 +1,1 @@
+export const PUBLIC_VAPID_KEY_OF_SERVER = 'BLJJGwiEasdfojawe9123-1231u212jöj124öo214ojuj124öl';

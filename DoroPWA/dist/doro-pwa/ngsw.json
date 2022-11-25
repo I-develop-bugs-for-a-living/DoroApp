@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1668033204900,
+  "timestamp": 1668635272791,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -13,7 +13,7 @@
       "urls": [
         "/favicon.ico",
         "/index.html",
-        "/main.8fdeff05f53d7dbd.js",
+        "/main.f6cb6adae6251b1a.js",
         "/manifest.webmanifest",
         "/polyfills.8748ab852e8ee708.js",
         "/runtime.0db7f60723a0cd9e.js",
@@ -43,7 +43,36 @@
       "patterns": []
     }
   ],
-  "dataGroups": [],
+  "dataGroups": [
+    {
+      "name": "apiw_machines",
+      "patterns": [
+        "http:\\/\\/localhost:5000\\/w_machines_status"
+      ],
+      "strategy": "performance",
+      "maxSize": 20,
+      "maxAge": 86400000,
+      "timeoutMs": 5000,
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "version": 1
+    },
+    {
+      "name": "apitrockner",
+      "patterns": [
+        "http:\\/\\/localhost:5000\\/trockner_status"
+      ],
+      "strategy": "performance",
+      "maxSize": 20,
+      "maxAge": 86400000,
+      "timeoutMs": 5000,
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "version": 1
+    }
+  ],
   "hashTable": {
     "/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
     "/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
@@ -56,8 +85,8 @@
     "/assets/undraw_pic_profile_re_lxn6.svg": "7279e3aeb6fbb4c1fda37b5f17c1f6e0b6854e64",
     "/assets/undraw_time_management_re_tk5w.svg": "c63708aade49109fab812bcc864bf67b0071824c",
     "/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "/index.html": "01b2d61187ad8ae63abd22abd24f175b4ddd67a5",
-    "/main.8fdeff05f53d7dbd.js": "c5a3b129b373642d8c7748573792cc7e54bc8edb",
+    "/index.html": "c2e7103cd0981c5ab5ac7f4bf0fad2d7f8dbb590",
+    "/main.f6cb6adae6251b1a.js": "63a88886968b9e009f0e9a38eb77d3feb5a0ce20",
     "/manifest.webmanifest": "69d8a3c014db09dd805bc4b720fbfd7ef08fc386",
     "/polyfills.8748ab852e8ee708.js": "896eee47ae00da4bdfb75a6cffd68728e954dd45",
     "/runtime.0db7f60723a0cd9e.js": "9df4550eab33aa8c664a361486e785db80fd1e87",
