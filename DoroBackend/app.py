@@ -3,7 +3,7 @@ from flask import Flask, request
 
 
 app = Flask(__name__)
-api = Api(app)
+api = Api(app, '/api/v1')
 
 maschines = {"Waschmaschine 1": "Free", "Waschmaschine 2": "In Use", "Waschmaschine 3": "Done", "Waschmaschine 4": "Done"}
 trockner = {"Trockner 1": "Free", "Trockner 2": "Done"}

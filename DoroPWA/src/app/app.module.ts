@@ -14,6 +14,11 @@ import { PeoplecardComponent } from './components/peoplecard/peoplecard.componen
 import { MachineStatusComponent } from './components/machine-status/machine-status.component';
 import { StartComponent } from './components/start/start.component';
 import { MensaBuddyComponent } from './components/mensa-buddy/mensa-buddy.component';
+import { MarketplaceComponent } from './marketplace/marketplace/marketplace.component';
+import { MarketcardComponent } from './marketplace/marketcard/marketcard.component';
+import { NewItemComponent } from './marketplace/new-item/new-item.component';
+import { OverviewComponent } from './shareplace/overview/overview.component';
+import { NewSharedItemComponent } from './shareplace/new-shared-item/new-shared-item.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +28,12 @@ import { MensaBuddyComponent } from './components/mensa-buddy/mensa-buddy.compon
     PeoplecardComponent,
     MachineStatusComponent,
     StartComponent,
-    MensaBuddyComponent
+    MensaBuddyComponent,
+    MarketplaceComponent,
+    MarketcardComponent,
+    NewItemComponent,
+    OverviewComponent,
+    NewSharedItemComponent,
   ],
   imports: [
     BrowserModule,

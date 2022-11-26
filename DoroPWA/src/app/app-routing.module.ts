@@ -4,11 +4,15 @@ import { MachineStatusComponent } from './components/machine-status/machine-stat
 import { MensaBuddyComponent } from './components/mensa-buddy/mensa-buddy.component';
 import { PeoplelistComponent } from './components/peoplelist/peoplelist.component';
 import { StartComponent } from './components/start/start.component';
+import { MarketplaceComponent } from './marketplace/marketplace/marketplace.component';
+import { NewItemComponent } from './marketplace/new-item/new-item.component';
 
 const routes: Routes = [
   {path:'w_machine_status', component: MachineStatusComponent},
   {path:'people_list', component: PeoplelistComponent},
   {path:'mensa_buddy', component: MensaBuddyComponent},
+  {path:'marketplace', component: MarketplaceComponent},
+  {path:'new-item', component: NewItemComponent},
   {path:'', component: StartComponent},
 
 ];

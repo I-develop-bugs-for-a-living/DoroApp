@@ -12,16 +12,19 @@
         <div class="offcanvas-body bg-dark" style="display: flex; flex-direction: column; flex-flow: column;">
           <ul class="navbar-nav justify-content-start flex-grow-1 pe-3">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
+              <a class="nav-link active" aria-current="page" href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" (click)="redirecting('w_machine_status')">Machine Status</a>
+              <a class="nav-link" (click)="redirecting('w_machine_status')" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">Machine Status</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" (click)="redirecting('people_list')">Bewohnersuche</a>
+              <a class="nav-link" (click)="redirecting('people_list')" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">Bewohnersuche</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" (click)="redirecting('mensa_buddy')">Mensabuddy</a>
+              <a class="nav-link" (click)="redirecting('mensa_buddy')" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">Mensabuddy</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" (click)="redirecting('marketplace')" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">Marketplace</a>
             </li>
           </ul>
           <form class="d-flex mt-3" role="search">

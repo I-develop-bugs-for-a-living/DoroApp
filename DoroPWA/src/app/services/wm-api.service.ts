@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable, Subject, throwError } from 'rxjs';
+import { apiUrl } from '../constants';
 
 @Injectable({
   providedIn: 'root'
 })
 export class WmApiService {
-  private apiUrl: string = 'https://beready-env.eba-ct8pphes.eu-central-1.elasticbeanstalk.com/api/v1';
+  private apiUrl: string = apiUrl;
 
   constructor(private http: HttpClient) {  }
 
