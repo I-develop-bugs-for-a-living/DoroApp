@@ -8,7 +8,6 @@ export interface Item {
     price: number;
     quantity: number;
     image: string;
-    category: string;
 }
 
 export interface SharedItem {
