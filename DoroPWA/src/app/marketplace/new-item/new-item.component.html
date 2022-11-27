@@ -1,9 +1,29 @@
-<p>new-item works!</p>
 <form>
-    <h3>Productfoto</h3>
-    <input type="image" src="" alt="">
-    <h3>Description</h3>
-    <input type="text" name="" id="">
+    <div class="mb-3">
+      <label for="formFile" class="form-label">Productfoto</label>
+      <input class="form-control" type="file" id="formFile">
+    </div>
+    
+    <div class="mb-3">
+      <label for="name" class="form-label">Name</label>
+      <input class="form-control" type="text" name="" id="name">
+    </div>
+
+    <div class="mb-3">
+      <label for="description" class="form-label">Beschreibung</label>
+      <textarea class="form-control" id="description" rows="3"></textarea>
+    </div>
+
+    <div class="mb-3">
+      <label for="price" class="form-label">Preis</label>
+      <input class="form-control" type="number" name="" id="price">
+    </div>
+
+    <div class="mb-3">
+      <label for="quantity" class="form-label">Menge</label>
+      <input class="form-control" type="number" name="" id="quantity">
+      
+    </div>
 
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>

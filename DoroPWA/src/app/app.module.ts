@@ -19,6 +19,7 @@ import { MarketcardComponent } from './marketplace/marketcard/marketcard.compone
 import { NewItemComponent } from './marketplace/new-item/new-item.component';
 import { OverviewComponent } from './shareplace/overview/overview.component';
 import { NewSharedItemComponent } from './shareplace/new-shared-item/new-shared-item.component';
+import { SharedcardComponent } from './shareplace/sharedcard/sharedcard.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { NewSharedItemComponent } from './shareplace/new-shared-item/new-shared-
     NewItemComponent,
     OverviewComponent,
     NewSharedItemComponent,
+    SharedcardComponent,
   ],
   imports: [
     BrowserModule,
