@@ -10,15 +10,19 @@ import { NavigationEnd, Router } from '@angular/router';
 export class MachineStatusComponent implements OnInit {
   title = 'DoroPWA';
   statuses = ['In Use', 'Done', 'Free']
-  Machines = {'Waschmaschine 1': 'In Use', 'Waschmaschine 2': 'Free', 'Waschmaschine 3': 'Done', 'Waschmaschine 4': 'Done'};
-  Trockner = {"Trockner 1": "Free", "Trockner 2": "Done"};
-  counter = 0;
+  machines = [
+    {"id": 1, "name": "Waschmaschine 1", "status": "Done"},
+    {"id": 2, "name": "Waschmaschine 2", "status": "Done"},
+    {"id": 3, "name": "Waschmaschine 3", "status": "Done"},
+    {"id": 4, "name": "Waschmaschine 4", "status": "Done"},
+    {"id": 5, "name": "Trockner 1", "status": "Done"},
+    {"id": 6, "name": "Trockner 2", "status": "Done"},
+];
 
   constructor(private api:WmApiService, private router:Router) {}
 
   ngOnInit():void {
-    this.api.getWMachines().subscribe((response:any) => {this.Machines = response})
-    this.api.getTrockner().subscribe((response:any) => {this.Trockner = response})
+    this.api.getMachines().subscribe((response:any) => {this.machines = response})
   }
 
   redirectToPeopleList() {
@@ -26,12 +30,7 @@ export class MachineStatusComponent implements OnInit {
   }
   
   switchStatus(id:string, status:string) {
-    this.api.setWMachinesStatus(id, status).subscribe((response) => {alert(response)})
-    this.api.getWMachines().subscribe((response:any) => {this.Machines = response})
-  }
-
-  switchStatusT(id:string, status:string) {
-    this.api.setTrocknerStatus(id, status).subscribe((response) => {alert(response)})
-    this.api.getTrockner().subscribe((response:any) => {this.Trockner = response})
+    this.api.setMachinesStatus(id, status).subscribe((response) => {alert(response)})
+    this.api.getMachines().subscribe((response:any) => {this.machines = response})
   }
 }

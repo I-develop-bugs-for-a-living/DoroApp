@@ -20,6 +20,7 @@ import { NewItemComponent } from './marketplace/new-item/new-item.component';
 import { OverviewComponent } from './shareplace/overview/overview.component';
 import { NewSharedItemComponent } from './shareplace/new-shared-item/new-shared-item.component';
 import { SharedcardComponent } from './shareplace/sharedcard/sharedcard.component';
+import { MachineCardComponent } from './components/machine-card/machine-card.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { SharedcardComponent } from './shareplace/sharedcard/sharedcard.componen
     OverviewComponent,
     NewSharedItemComponent,
     SharedcardComponent,
+    MachineCardComponent,
   ],
   imports: [
     BrowserModule,
