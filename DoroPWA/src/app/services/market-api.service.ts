@@ -16,6 +16,8 @@ export class MarketApiService {
   }
 
   postNewMarketItem(item: any) {
-    return this.http.post(`${this.url}/marketplace`, item);
+    return this.http.post(`${this.url}/marketplace`, item).subscribe(
+      (response) => {console.log("Hello World")}
+    );
   }
 }
