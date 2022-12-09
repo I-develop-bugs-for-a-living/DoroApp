@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-marketcard',
@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./marketcard.component.css']
 })
 export class MarketcardComponent implements OnInit {
+  @Input() marketItem: any;
 
   constructor() { }
 
