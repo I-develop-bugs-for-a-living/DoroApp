@@ -1,12 +1,11 @@
 <div class="card" style="width: 18rem;">
-    <img src="..." class="card-img-top" alt="...">
+    <img src="/assets/undraw_order_delivered_re_v4ab.svg" class="card-img-top" alt="...">
     <div class="card-body">
-      <h5 class="card-title">Toaster</h5>
-      <p class="card-text">Toaster im Neuzustand. Hat zwei Slots und macht sehr gute Sandwiches. Marke Bauknecht. Trenn mich ungern</p>
+      <h5 class="card-title">{{marketItem.name}}</h5>
+      <p class="card-text">{{marketItem.description}}</p>
     </div>
     <ul class="list-group list-group-flush">
-      <li class="list-group-item">Anbieter: Timmy Turner</li>
-      <li class="list-group-item">Preis: 20€</li>
-      <li class="list-group-item">Vehandlung: Ja</li>
+      <li class="list-group-item">{{marketItem.giver}}</li>
+      <li class="list-group-item">{{marketItem.price}} $</li>
     </ul>
   </div>

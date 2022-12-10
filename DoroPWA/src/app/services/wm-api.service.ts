@@ -11,31 +11,17 @@ export class WmApiService {
 
   constructor(private http: HttpClient) {  }
 
-  getWMachines() {
-    return this.http.get(`${this.apiUrl}/w_machines_status`)
+  getMachines() {
+    return this.http.get(`${this.apiUrl}/machines_status`)
   }
 
-  setWMachinesStatus(id:string, status:string) {
+  setMachinesStatus(id:string, status:string) {
 
     const formData: FormData = new FormData();
 
     formData.append('machine_id', id);
     formData.append('machine_status', status);
-    return this.http.post(`${this.apiUrl}/w_machines_status`, formData)
+    return this.http.post(`${this.apiUrl}/machines_status`, formData)
   }
-
-  getTrockner() {
-    return this.http.get(`${this.apiUrl}/trockner_status`)
-  }
-
-  setTrocknerStatus(id:string, status:string) {
-
-    const formData: FormData = new FormData();
-
-    formData.append('machine_id', id);
-    formData.append('machine_status', status);
-    return this.http.post(`${this.apiUrl}/trockner_status`, formData)
-  }
-
 
 }

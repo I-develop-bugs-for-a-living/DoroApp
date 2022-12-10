@@ -1,3 +1,5 @@
 <h1>Doro Marketplace</h1>
 <button class="btn btn-primary" (click)="redirecting('new-item')">Offer new item</button>
-<app-marketcard></app-marketcard>
+<ng-container *ngFor="let item of marketItems">
+    <app-marketcard [marketItem]="item"></app-marketcard>
+</ng-container>

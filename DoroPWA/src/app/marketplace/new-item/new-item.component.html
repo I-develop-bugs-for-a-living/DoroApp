@@ -1,29 +1,38 @@
-<form>
-    <div class="mb-3">
-      <label for="formFile" class="form-label">Productfoto</label>
-      <input class="form-control" type="file" id="formFile">
-    </div>
+<button (click)="back()">Back</button>
+
+<p>{{ newItemFormFB.value | json }}</p>
+
+<form [formGroup]="newItemFormFB" (submit)="addNewItem()" >
+
+    <input formControlName="name" type="text">
     
-    <div class="mb-3">
-      <label for="name" class="form-label">Name</label>
-      <input class="form-control" type="text" name="" id="name">
-    </div>
+    <ng-container *ngIf="newItemFormFB.controls['name'].dirty || newItemFormFB.controls['name'].touched">
+      <p *ngIf="newItemFormFB.controls['name'].errors">Not a valid name</p>
+    </ng-container>
 
-    <div class="mb-3">
-      <label for="description" class="form-label">Beschreibung</label>
-      <textarea class="form-control" id="description" rows="3"></textarea>
-    </div>
 
-    <div class="mb-3">
-      <label for="price" class="form-label">Preis</label>
-      <input class="form-control" type="number" name="" id="price">
-    </div>
+    <input formControlName="description" type="text">
+    <ng-container *ngIf="newItemFormFB.controls['description'].dirty || newItemFormFB.controls['description'].touched">
+      <p *ngIf="newItemFormFB.controls['description'].errors">Not a valid description</p>
+    </ng-container>
 
-    <div class="mb-3">
-      <label for="quantity" class="form-label">Menge</label>
-      <input class="form-control" type="number" name="" id="quantity">
-      
-    </div>
+    <input formControlName="giver" type="text">
+    <ng-container *ngIf="newItemFormFB.controls['giver'].dirty || newItemFormFB.controls['giver'].touched">
+      <p *ngIf="newItemFormFB.controls['giver'].errors">Not a valid description</p>
+    </ng-container>
 
-    <button type="submit" class="btn btn-primary">Submit</button>
-  </form>
+    <input formControlName="price" type="number">
+    <ng-container *ngIf="newItemFormFB.controls['price'].dirty || newItemFormFB.controls['price'].touched">
+      <p *ngIf="newItemFormFB.controls['price'].errors">Not a valid price</p>
+    </ng-container>
+
+
+    <button [disabled]="!newItemFormFB.valid" type="submit">Absenden</button>
+</form>
+  
+    <!-- <div>
+      <input type="file" (change)="CreateBase64String($event)" class="fileInputProfileform-control">
+      <ng-container *ngIf="imageIsSaved">
+          <img [src]="cardImageBase64" >
+      </ng-container>
+  </div> -->

@@ -1,0 +1,15 @@
+<div class="card" style="width: 18rem;">
+    <img src="../assets/undraw_time_management_re_tk5w.svg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h3 class="card-title">{{machine.name}}</h3>
+      <div>
+        <span class="card-text">Status:</span>
+        <h5 *ngIf="machine.status == 'Done'" style="color: red;">{{machine.status}}</h5>
+        <h5 *ngIf="machine.status == 'Free'" style="color: green;">{{machine.status}}</h5>
+        <h5 *ngIf="machine.status == 'In Use'" style="color: blue;">{{machine.status}}</h5>
+      </div>
+      <a (click)="switchStatus('Done')" class="btn btn-danger btn-status">Done</a>
+      <a (click)="switchStatus('Free')" class="btn btn-success btn-status">Free</a>
+      <a (click)="switchStatus('In Use')" class="btn btn-primary btn-status">In Use</a>
+    </div>
+  </div>

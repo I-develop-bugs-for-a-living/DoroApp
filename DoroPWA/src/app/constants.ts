@@ -1,5 +1,5 @@
-//export const apiUrl: string = 'http://localhost:5000/api/v1';
-export const apiUrl: string = 'https://beready-env.eba-ct8pphes.eu-central-1.elasticbeanstalk.com/api/v1';
+export const apiUrl: string = 'http://localhost:5000/api/v1';
+//export const apiUrl: string = 'https://beready-env.eba-ct8pphes.eu-central-1.elasticbeanstalk.com/api/v1';
 
 
 export interface Item {
