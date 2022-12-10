@@ -1,33 +1,44 @@
-<button (click)="back()">Back</button>
+<button class="btn btn-danger" (click)="back()">Back</button>
 
-<p>{{ newItemFormFB.value | json }}</p>
+<form class="container" [formGroup]="newItemFormFB" (submit)="addNewItem()" >
 
-<form [formGroup]="newItemFormFB" (submit)="addNewItem()" >
+    <h1>Biete was auf dem Marketplace an</h1>
 
-    <input formControlName="name" type="text">
+    <label for="input_name" class="form-label">Produktname</label>
+    <input class="form-control" placeholder="..." formControlName="name" id="input_name" type="text">
     
-    <ng-container class="form-control" *ngIf="newItemFormFB.controls['name'].dirty || newItemFormFB.controls['name'].touched">
-      <p *ngIf="newItemFormFB.controls['name'].errors">Not a valid name</p>
+    <ng-container *ngIf="newItemFormFB.controls['name'].dirty || newItemFormFB.controls['name'].touched">
+      <p class="error-message" *ngIf="newItemFormFB.controls['name'].errors">Not a valid name</p>
     </ng-container>
 
-
-    <input formControlName="description" type="text">
+    <label for="input_description" class="form-label">Produktbeschreibung</label>
+    <div class="input-group">
+      <span class="input-group-text">Zustand etc.</span>
+      <textarea class="form-control" formControlName="description" id="input_description"  type="text"></textarea>
+    </div>
     <ng-container *ngIf="newItemFormFB.controls['description'].dirty || newItemFormFB.controls['description'].touched">
-      <p *ngIf="newItemFormFB.controls['description'].errors">Not a valid description</p>
+      <p class="error-message" *ngIf="newItemFormFB.controls['description'].errors">Not a valid description</p>
     </ng-container>
 
-    <input formControlName="giver" type="text">
+    <label for="input_giver" class="form-label">Verkäufername oder Zimmernummer</label>
+    <input class="form-control" formControlName="giver" id="input_giver" type="text">
     <ng-container *ngIf="newItemFormFB.controls['giver'].dirty || newItemFormFB.controls['giver'].touched">
-      <p *ngIf="newItemFormFB.controls['giver'].errors">Not a valid description</p>
+      <p class="error-message" *ngIf="newItemFormFB.controls['giver'].errors">Not a valid Person</p>
     </ng-container>
 
-    <input formControlName="price" type="number">
+    <label for="input_price" class="form-label">Preis</label>
+    <div class="input-group">
+      <input class="form-control" formControlName="price" id="input_price" type="number">
+      <span class="input-group-text">$</span>
+    </div>
     <ng-container *ngIf="newItemFormFB.controls['price'].dirty || newItemFormFB.controls['price'].touched">
-      <p *ngIf="newItemFormFB.controls['price'].errors">Not a valid price</p>
+      <p class="error-message" *ngIf="newItemFormFB.controls['price'].errors">Not a valid price</p>
     </ng-container>
 
 
-    <button [disabled]="!newItemFormFB.valid" type="submit">Absenden</button>
+    <button class="btn btn-primary" [disabled]="!newItemFormFB.valid" type="submit">Absenden</button>
+
+    <p>{{ newItemFormFB.value | json }}</p>
 </form>
   
     <!-- <div>
