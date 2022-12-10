@@ -6,7 +6,7 @@
 
     <input formControlName="name" type="text">
     
-    <ng-container *ngIf="newItemFormFB.controls['name'].dirty || newItemFormFB.controls['name'].touched">
+    <ng-container class="form-control" *ngIf="newItemFormFB.controls['name'].dirty || newItemFormFB.controls['name'].touched">
       <p *ngIf="newItemFormFB.controls['name'].errors">Not a valid name</p>
     </ng-container>
 
