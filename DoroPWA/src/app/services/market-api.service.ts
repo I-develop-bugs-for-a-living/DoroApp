@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { apiUrl } from '../constants';
 
 
@@ -19,5 +19,15 @@ export class MarketApiService {
     return this.http.post(`${this.url}/marketplace`, item).subscribe(
       (response) => {console.log("Hello World")}
     );
+  }
+
+  deleteMarketItem(json: any) {
+    let options = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      }),
+      body: json
+    }
+    return this.http.delete(`${this.url}/marketplace`, options);
   }
 }
