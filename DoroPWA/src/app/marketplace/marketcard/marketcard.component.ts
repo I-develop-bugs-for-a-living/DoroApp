@@ -16,7 +16,10 @@ export class MarketcardComponent implements OnInit {
 
   onSelled() {
     this.marketApi.deleteMarketItem({"id": this.marketItem.id}).subscribe(
-      (response) => {console.log("Hello World")}
+      (response) => {
+        console.log("Hello World")
+        window.location.reload();
+      }
     );
 
   }
