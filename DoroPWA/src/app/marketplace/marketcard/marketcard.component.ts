@@ -1,5 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
 import { MarketApiService } from 'src/app/services/market-api.service';
+import { EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-marketcard',
@@ -8,6 +9,7 @@ import { MarketApiService } from 'src/app/services/market-api.service';
 })
 export class MarketcardComponent implements OnInit {
   @Input() marketItem: any;
+  @Output() reload = new EventEmitter<string>();
 
   constructor(private marketApi: MarketApiService) { }
 
@@ -15,9 +17,7 @@ export class MarketcardComponent implements OnInit {
   }
 
   onSelled() {
-    this.marketApi.deleteMarketItem({"id": this.marketItem.id}).subscribe(
-      (response) => {console.log("Hello World")}
-    );
+    this.marketApi.deleteMarketItem({"id": this.marketItem.id}).subscribe((response) => { this.reload.emit('reload');});
 
   }
 
