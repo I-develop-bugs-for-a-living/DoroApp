@@ -23,4 +23,10 @@ export class MarketplaceComponent implements OnInit {
     this.router.navigate([a]);
   }
 
+  onReload(a: any) {
+    this.marketApi.getMarketData().subscribe((response) => {
+      this.marketItems = response;
+    })
+  }
+
 }

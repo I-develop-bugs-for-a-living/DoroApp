@@ -43,7 +43,9 @@ export class NewItemComponent implements OnInit {
   }
 
   addNewItem() {
-    this.marketApi.postNewMarketItem(this.newItemFormFB.value)
+    this.marketApi.postNewMarketItem(this.newItemFormFB.value).subscribe(
+      (response) => {console.log(response); this.router.navigate(['/marketplace']);}
+    );
   }
 
 
