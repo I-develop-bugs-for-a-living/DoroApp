@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+body.active .app-root .app-sidebar .page .sidebar{
+    left: -250px;
+}
+
+body.active .app-root .app-sidebar .page .content{
+    margin-left: 0;
+    width: 100%;
+}

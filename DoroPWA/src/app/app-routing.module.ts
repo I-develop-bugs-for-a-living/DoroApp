@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { MachineStatusComponent } from './components/machine-status/machine-status.component';
 import { MensaBuddyComponent } from './components/mensa-buddy/mensa-buddy.component';
 import { PeoplelistComponent } from './components/peoplelist/peoplelist.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { StartComponent } from './components/start/start.component';
 import { MarketplaceComponent } from './marketplace/marketplace/marketplace.component';
 import { NewItemComponent } from './marketplace/new-item/new-item.component';
@@ -17,6 +18,7 @@ const routes: Routes = [
   {path:'new-item', component: NewItemComponent},
   {path:'shared', component: OverviewComponent},
   {path:'new_shared', component: NewSharedItemComponent},
+  {path:'test', component: SidebarComponent},
   {path:'', component: StartComponent},
 
 ];

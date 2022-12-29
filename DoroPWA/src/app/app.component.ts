@@ -72,7 +72,7 @@ export class AppComponent implements OnInit {
     });
   }
 
-  redirecting(a:any) {
+  redirecting(a:string) {
     this.router.navigate([a]);
   }
 }

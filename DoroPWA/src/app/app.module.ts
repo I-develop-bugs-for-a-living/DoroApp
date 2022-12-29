@@ -21,6 +21,7 @@ import { OverviewComponent } from './shareplace/overview/overview.component';
 import { NewSharedItemComponent } from './shareplace/new-shared-item/new-shared-item.component';
 import { SharedcardComponent } from './shareplace/sharedcard/sharedcard.component';
 import { MachineCardComponent } from './components/machine-card/machine-card.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { MachineCardComponent } from './components/machine-card/machine-card.com
     NewSharedItemComponent,
     SharedcardComponent,
     MachineCardComponent,
+    SidebarComponent,
   ],
   imports: [
     BrowserModule,

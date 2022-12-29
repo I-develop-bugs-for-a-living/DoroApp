@@ -1,0 +1,168 @@
+   
+<div class="page">
+
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-logo-container">
+                <div class="logo-container">
+                    <img class="logo-sidebar" src="assets/img/logo.png" />
+                </div>
+                <div class="brand-name-container">
+                    <p class="brand-name">
+                        Doroapp<br />
+                        <span class="brand-subname">
+                            <i class="fas fa-circle"></i>
+                            <span class="brand-subname-text">Online</span>
+                        </span>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="sidebar-body">
+            <ul class="navigation-list">
+                <li class="navigation-list-item" (click)="redirecting('')">
+                    <a class="navigation-link">
+                        <div class="row">
+                            <div class="col-2">
+                                <i class="fas fa-home"></i>
+                            </div>
+                            <div class="col-9">
+                                Home
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li class="navigation-list-item" (click)="redirecting('w_machine_status')">
+                    <a class="navigation-link">
+                        <div class="row">
+                            <div class="col-2">
+                                <i class="fas fa-rss"></i>
+                            </div>
+                            <div class="col-9">
+                                Machine status
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li class="navigation-list-item active" (click)="redirecting('people_list')">
+                    <a class="navigation-link">
+                        <div class="row">
+                            <div class="col-2">
+                                <i class="fas fa-address-book"></i>
+                            </div>
+                            <div class="col-9">
+                                Bewohnersuche
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li class="navigation-list-item" (click)="redirecting('mensa_buddy')">
+                    <a class="navigation-link">
+                        <div class="row">
+                            <div class="col-2">
+                                <i class="fas fa-map-marker"></i>
+                            </div>
+                            <div class="col-9">
+                                Mensabuddy
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li class="navigation-list-item" (click)="redirecting('marketplace')">
+                    <a class="navigation-link">
+                        <div class="row">
+                            <div class="col-2">
+                                <i class="fas fa-credit-card"></i>
+                            </div>
+                            <div class="col-9">
+                                Marketplace
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li class="navigation-list-item" (click)="redirecting('shared')">
+                    <a class="navigation-link">
+                        <div class="row">
+                            <div class="col-2">
+                                <i class="fas fa-wrench"></i>
+                            </div>
+                            <div class="col-9">
+                                Shared items
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li class="navigation-list-item" (click)="redirecting('w_machine_status')">
+                    <a class="navigation-link">
+                        <div class="row">
+                            <div class="col-2">
+                                <i class="fas fa-fire"></i>
+                            </div>
+                            <div class="col-9">
+                                Feueralarm
+                            </div>
+                        </div>
+                    </a>
+                </li>
+
+            </ul>
+            <hr style="color:rgb(255, 255, 255);margin-top:30px;">
+            <div class="teams-title-container">
+                <p class="teams-title">SUBGROUPS</p>
+            </div>
+            <ul class="teams-list">
+                <li class="teams-item">
+                    <div class="row">
+                        <div class="col-1">
+                            <i class="fas fa-circle" style="color: rgb(255, 92, 160, 0.8);"></i>
+                        </div>
+                        <div class="col-9">
+                            Restaurant
+                        </div>
+                    </div>
+                </li>
+                <li class="teams-item">
+                    <div class="row">
+                        <div class="col-1">
+                            <i class="fas fa-circle" style="color: rgb(36, 115, 242, 0.8);"></i>
+                        </div>
+                        <div class="col-9">
+                            Bowling
+                        </div>
+                    </div>
+                </li>
+                <li class="teams-item">
+                    <div class="row">
+                        <div class="col-1">
+                            <i class="fas fa-circle" style="color: rgb(51, 242, 105, 0.8);"></i>
+                        </div>
+                        <div class="col-9">
+                            Klassenfahrt
+                        </div>
+                    </div>
+                </li>
+                <li class="teams-item">
+                    <div class="row">
+                        <div class="col-1">
+                            <i class="fas fa-circle" style="color: rgb(237, 181, 28, 0.8);"></i>
+                        </div>
+                        <div class="col-9">
+                            Kino
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+    
+    <div class="content">
+        <div class="navigationBar">
+            <button id="sidebarToggle" class="btn sidebarToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </div>
+    
+</div>
+ 
